@@ -1,0 +1,117 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+}
+
+.on::before {
+  background: var(--ok);
+  box-shadow: 0 0 16px var(--ok);
+}
+
+.off::before {
+  background: var(--crit);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.state {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.on .state {
+  color: var(--ok);
+  background: color-mix(in srgb, var(--ok) 15%, transparent);
+}
+
+.off .state {
+  color: var(--crit);
+  background: color-mix(in srgb, var(--crit) 15%, transparent);
+}
+
+.stats {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.stats dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.stats dd {
+  margin: 2px 0 0;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.stats div:first-child dd {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.crit {
+  color: var(--crit);
+  font-weight: 700;
+}
+
+.warn {
+  color: var(--warn);
+  font-weight: 700;
+}
+
+.button {
+  margin-top: auto;
+  font: inherit;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.on .button:hover:not(:disabled) {
+  border-color: var(--crit);
+}
+
+.off .button:hover:not(:disabled) {
+  border-color: var(--ok);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}

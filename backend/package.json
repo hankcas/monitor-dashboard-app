@@ -1,15 +1,15 @@
 {
-  "name": "backend",
+  "name": "monitor-dashboard-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API de telemetr\u00eda simulada para Monitor Dashboard",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "author": "Leonardo Castro",
+  "license": "MIT",
+  "type": "module",
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1"
